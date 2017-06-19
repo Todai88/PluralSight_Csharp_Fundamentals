@@ -1,0 +1,6 @@
+C:\Users\Todai\Documents\Visual Studio 2017\Projects\PluralSight_Csharp_Fundamentals\Classes_and_Objects\Grades\Grades\bin\Debug\Grades.exe.config
+C:\Users\Todai\Documents\Visual Studio 2017\Projects\PluralSight_Csharp_Fundamentals\Classes_and_Objects\Grades\Grades\bin\Debug\Grades.exe
+C:\Users\Todai\Documents\Visual Studio 2017\Projects\PluralSight_Csharp_Fundamentals\Classes_and_Objects\Grades\Grades\bin\Debug\Grades.pdb
+C:\Users\Todai\Documents\Visual Studio 2017\Projects\PluralSight_Csharp_Fundamentals\Classes_and_Objects\Grades\Grades\obj\Debug\Grades.csprojResolveAssemblyReference.cache
+C:\Users\Todai\Documents\Visual Studio 2017\Projects\PluralSight_Csharp_Fundamentals\Classes_and_Objects\Grades\Grades\obj\Debug\Grades.exe
+C:\Users\Todai\Documents\Visual Studio 2017\Projects\PluralSight_Csharp_Fundamentals\Classes_and_Objects\Grades\Grades\obj\Debug\Grades.pdb
