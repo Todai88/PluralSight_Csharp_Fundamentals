@@ -10,3 +10,6 @@ C:\Users\Todai\Documents\Visual Studio 2017\Projects\PluralSight_Csharp_Fundamen
 C:\Users\Todai\Documents\Visual Studio 2017\Projects\PluralSight_Csharp_Fundamentals\Classes_and_Objects\Grades\Grades.Tests\obj\Debug\Grades.Tests.csprojResolveAssemblyReference.cache
 C:\Users\Todai\Documents\Visual Studio 2017\Projects\PluralSight_Csharp_Fundamentals\Classes_and_Objects\Grades\Grades.Tests\obj\Debug\Grades.Tests.dll
 C:\Users\Todai\Documents\Visual Studio 2017\Projects\PluralSight_Csharp_Fundamentals\Classes_and_Objects\Grades\Grades.Tests\obj\Debug\Grades.Tests.pdb
+C:\Users\Todai\Documents\Visual Studio 2017\Projects\PluralSight_Csharp_Fundamentals\Classes_and_Objects\Grades\Grades.Tests\bin\Debug\Grades.exe
+C:\Users\Todai\Documents\Visual Studio 2017\Projects\PluralSight_Csharp_Fundamentals\Classes_and_Objects\Grades\Grades.Tests\bin\Debug\Grades.pdb
+C:\Users\Todai\Documents\Visual Studio 2017\Projects\PluralSight_Csharp_Fundamentals\Classes_and_Objects\Grades\Grades.Tests\bin\Debug\Grades.exe.config

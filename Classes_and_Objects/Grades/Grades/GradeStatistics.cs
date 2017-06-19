@@ -13,6 +13,24 @@ namespace Grades
         private float _minGrade;
         private float _maxGrade;
         private float _average;
+
+
+        public float getMin()
+        {
+            return _minGrade;
+        }
+
+        public float getMax()
+        {
+            return _maxGrade;
+        }
+
+        public float getAvg()
+        {
+            return _average;
+        }
+
+
         public GradeStatistics(GradeBook gb)
         {
             _gradeBook = gb;
