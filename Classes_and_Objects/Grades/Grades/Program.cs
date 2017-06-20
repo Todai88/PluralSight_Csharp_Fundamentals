@@ -10,19 +10,44 @@ namespace Grades
     {
         static void Main(string[] args)
         {
-            GradeBook book = new GradeBook();
+            IGradeTracker book = CreateGradeBook();
+            book.Name = "Bethany's Grade Book.";
+            book.NameChanged += OnNameChanged;
+            book.Name = "Joakim's Grade Book.";
             book.AddGrade(91);
             book.AddGrade(89.5f);
             book.AddGrade(75);
 
-            GradeBook book2 = new GradeBook();
+            IGradeTracker book2 = CreateGradeBook();
             book2.AddGrade(54);
             book2.AddGrade(32.5f);
 
-            GradeStatistics bookStats = new GradeStatistics(book);
-            bookStats.ComputeStatistics();
-
-            Console.WriteLine(bookStats.PrintStats());
+            WriteResults(book);
+            Console.WriteLine("\n--BREAK--\n");
+            WriteResults(book2);
         }
+
+        private static void WriteResults(IGradeTracker book)
+        {
+            GradeStatistics stats = book.ComputeStatistics();
+            Console.WriteLine("All grades:");
+            foreach(float grade in book)
+            {
+                Console.WriteLine(grade);
+            }
+            Console.WriteLine("---\nStatistics:");
+            Console.WriteLine($"Highest: {stats.AverageGrade}");
+            Console.WriteLine($"Lowest: {stats.LowestGrade}"); 
+            Console.WriteLine($"Average: {stats.HighestGrade}");
+        }
+        private static IGradeTracker CreateGradeBook()
+        {
+            return new ThrowAwayGradeBook();
+        }
+
+        static void OnNameChanged(object sender, NameChangedEventArgs args)
+        {
+            Console.WriteLine($"Grade Book changed name from '{args.ExistingName}' to '{args.NewName}'");
+        } 
     }
 }

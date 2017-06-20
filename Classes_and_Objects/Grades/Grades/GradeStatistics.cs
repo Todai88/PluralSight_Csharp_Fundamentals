@@ -9,46 +9,72 @@ namespace Grades
     public class GradeStatistics
     {
 
-        private GradeBook _gradeBook;
-        private float _minGrade;
-        private float _maxGrade;
-        private float _average;
 
+        public float AverageGrade;
+        public float HighestGrade;
+        public float LowestGrade;
 
-        public float getMin()
+        public GradeStatistics()
         {
-            return _minGrade;
+            HighestGrade = 0;
+            LowestGrade = float.MaxValue;
         }
 
-        public float getMax()
+        public string LetterGrade
         {
-            return _maxGrade;
+            get
+            {
+                string result;
+                if (AverageGrade >= 90)
+                {
+                    result = "A";
+                }
+                else if (AverageGrade >= 80)
+                {
+                    result = "B";
+                }
+                else if (AverageGrade >= 70)
+                {
+                    result = "C";
+                }
+                else if (AverageGrade >= 60)
+                {
+                    result = "D";
+                }
+                else
+                {
+                    result = "F";
+                }
+                return result;
+            }
         }
 
-        public float getAvg()
+        public string Description
         {
-            return _average;
-        }
-
-
-        public GradeStatistics(GradeBook gb)
-        {
-            _gradeBook = gb;
-        }
-
-        public void ComputeStatistics()
-        {
-            List<float> grades = _gradeBook.getGrades();
-
-            _minGrade = grades.Min();
-            _maxGrade = grades.Max();
-            _average  = grades.Average();
-        }
-
-        public string PrintStats()
-        {
-            return string.Format("Min:{0}\nMax:{1}\nAvg:{2}",
-                _minGrade, _maxGrade, _average);
+            get
+            {
+                string result;
+                switch (LetterGrade)
+                {
+                    case "A":
+                        result = "Excellent";
+                        break;
+                    case "B":
+                        result = "Good";
+                        break;
+                    case "C":
+                        result = "Average";
+                        break;
+                    case "D":
+                        result = "Below Average";
+                        break;
+                    default:
+                        result = "Failing";
+                        break;
+                }
+                return result;
+            }
         }
     }
+ 
 }

@@ -1,38 +1,24 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Grades
 {
-    public class GradeBook
+    public class GradeBook : GradeTracker
     {
-        private List<float> _grades;
-        private int _minGrade = 0;
-        private int _maxGrade = 100;
-        private string _name;
-
-        public string Name { get
-            {
-                return _name;
-            }
-             set
-            {
-                if (!String.IsNullOrEmpty(value))
-                {
-                    _name = value;
-                }
-            }
-
-        }
+        protected List<float> _grades; 
 
         public GradeBook()
         {
+            _name = "Empty";
             _grades = new List<float>();
         }
 
-        public void AddGrade(float grade)
+        public override void AddGrade(float grade)
         {
             _grades.Add(grade);
         }
@@ -40,6 +26,27 @@ namespace Grades
         public List<float> getGrades()
         {
             return _grades;
+        }
+
+        public override GradeStatistics ComputeStatistics()
+        {
+            Console.WriteLine("GradeBook::ComputeStatistics");
+            GradeStatistics stats = new GradeStatistics();
+
+            stats.HighestGrade = _grades.Max();
+            stats.LowestGrade  = _grades.Min();
+            stats.AverageGrade = _grades.Average();
+
+            return stats;
+        }
+
+        public override IEnumerator GetEnumerator()
+        {
+            return _grades.GetEnumerator();
+        }
+        public override void WriteGrades(TextWriter dest)
+        {
+
         }
     }
 }

@@ -23,45 +23,43 @@ namespace Grades.Tests
                 book.AddGrade(35.1f);
                 book.AddGrade(90);
                 this.book.Name = "Joakim's Grade Book";
-
-                this.bookStats = new GradeStatistics(book);
-                bookStats.ComputeStatistics();
+                this.bookStats = this.book.ComputeStatistics();
             }
 
             [TestMethod]
             public void TestCorrectHighestGrade()
             {
-                Assert.AreEqual(90, bookStats.getMax());
+                Assert.AreEqual(90, this.bookStats.HighestGrade);
             }
 
             [TestMethod]
             public void TestCorrectMinGrade()
             {
-                Assert.AreEqual(35.1f, bookStats.getMin());
+                Assert.AreEqual(35.1f, bookStats.LowestGrade);
             }
 
             [TestMethod]
             public void TestIncorrectMaxGrade()
             {
-                Assert.AreNotEqual(80, bookStats.getMax());
+                Assert.AreNotEqual(80, bookStats.HighestGrade);
             }
 
             [TestMethod]
             public void TestIncorrectMinGrade()
             {
-                Assert.AreNotEqual(30, bookStats.getMin());
-            }
+                Assert.AreNotEqual(30, bookStats.LowestGrade);
+            } 
 
             [TestMethod]
             public void TestCorrectAverage()
             {
-                Assert.AreEqual(62.55f, bookStats.getAvg(), 0.01);
+                Assert.AreEqual(62.55f, bookStats.AverageGrade, 0.01);
             }
 
             [TestMethod]
             public void TestIncorrectAverage()
             {
-                Assert.AreNotEqual(32, bookStats.getAvg());
+                Assert.AreNotEqual(32, bookStats.AverageGrade);
             }
 
             [TestMethod]
